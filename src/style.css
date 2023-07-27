@@ -1,14 +1,14 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: monospace;
 }
 
-.lists-container{
+.lists-container {
   width: 40%;
   height: 20%;
   margin-left: 30%;
@@ -21,24 +21,24 @@ body{
   gap: 10px;
 }
 
-.input-btn{
+.input-btn {
   display: flex;
   justify-content: space-between;
 }
 
-input{
+input {
   padding: 5px;
-  border: none ;
+  border: none;
   width: 100%;
 }
 
-.add-lists{
+.add-lists {
   border: none;
   background-color: #fff;
   cursor: pointer;
 }
 
-#lists{
+#lists {
   margin-left: 50px;
 }
 
@@ -73,7 +73,7 @@ input{
   font-size: 20px;
 }
 
-.remove-lists{
+.remove-lists {
   position: relative;
   top: 30px;
   border: none;
