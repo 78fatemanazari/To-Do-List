@@ -1,19 +1,19 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
- font-family: monospace, cursive;
- background: rgb(207, 245, 230);
+  font-family: monospace, cursive;
+  background: rgb(207, 245, 230);
 }
 
-.todo-list-container{
+.todo-list-container {
   margin-left: 35%;
   margin-top: 10%;
   padding: 20px;
-  width: 30% ;
+  width: 30%;
   background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -58,7 +58,7 @@ input::placeholder {
   color: rgb(158, 150, 150);
 }
 
-#add-btn{
+#add-btn {
   padding: 3px;
   background-color: #fff;
   border: none;
@@ -75,7 +75,7 @@ input::placeholder {
   padding: 5px;
 }
 
-.checked{
+.checked {
   margin-right: 10px;
   width: 16px;
   font-size: 12px;
@@ -133,6 +133,6 @@ input::placeholder {
   font-style: italic;
 }
 
-#remove-btn:hover{
+#remove-btn:hover {
   background: rgb(207, 245, 230);
 }

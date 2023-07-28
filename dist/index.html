@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To Do List - Set Structure</title>
+  <title>To Do List Application</title>
   <base href="/">
   <link rel="stylesheet" type="text/css" href="src/style.css">
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
-  <main class="todo-container">
-    <p class="title">Today's To Do...</p>
-    <div class="input-container">
+  <div class="todo-list-container">
+    <h1 class="heading">Today's To Do...</h1>
+    <div class="task-container">
       <input type="text" id="task-input" placeholder="Add to your list...">
-      <button id="add-task-btn" type="button"><span>&#8629;</span></button>
+      <button id="add-btn" type="button"><span>&#8629;</span></button>
     </div>
-    <ul id="task-list"></ul>
-    <button id="erase-all" type="button">Clear all completed</button>
-  </main>
+    <ul id="lists"></ul>
+    <button id="remove-btn" type="button">Clear all completed</button>
+  </div>
   <script type="module" src="main.js"></script>
   <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 </body>

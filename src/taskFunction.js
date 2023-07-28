@@ -3,7 +3,7 @@ function createTaskElement(taskName, tasksLocal) {
   if (!Array.isArray(tasksLocal)) {
     tasksLocal = [];
   }
-  
+
   const index = tasksLocal.length + 1;
   const complete = false;
   const taskString = { index, name: taskName, completed: complete };
@@ -19,6 +19,7 @@ function arrangeIndexes(tasksLocal) {
 
 function deleteTaskElement(tasksLocal, taskIndex) {
   tasksLocal = tasksLocal.filter((t) => t.index !== taskIndex);
+  arrangeIndexes(tasksLocal); // Reassign correct indexes after deletion
   localStorage.setItem('tasks', JSON.stringify(tasksLocal));
   document.location.reload();
 }
@@ -28,4 +29,6 @@ function updateTaskText(value, index, tasksLocal) {
   localStorage.setItem('tasks', JSON.stringify(tasksLocal));
 }
 
-export { createTaskElement, deleteTaskElement, updateTaskText };
+export {
+  createTaskElement, deleteTaskElement, updateTaskText, arrangeIndexes,
+};

@@ -1,5 +1,7 @@
 import './style.css';
-import { createTaskElement, deleteTaskElement, updateTaskText } from './taskFunction.js';
+import {
+  createTaskElement, deleteTaskElement, updateTaskText, arrangeIndexes,
+} from './taskFunction.js';
 
 let tasksLocal = [];
 
@@ -30,7 +32,7 @@ const displayTaskElement = (task) => {
 
   const moreIcon = document.createElement('span');
   moreIcon.classList.add('three-dot');
-  moreIcon.innerHTML = "⋮"
+  moreIcon.innerHTML = '⋮';
 
   const deleteIcon = document.createElement('span');
   deleteIcon.classList.add('trash-icon');
@@ -82,7 +84,6 @@ function activateMoreListeners() {
   });
 }
 
-
 function activateCheckboxListeners() {
   const checkboxInput = document.querySelectorAll('.checked');
   checkboxInput.forEach((cbi) => {
@@ -109,7 +110,6 @@ function activateTaskInputListeners() {
     });
   });
 }
-
 
 const displayTasks = () => {
   const taskList = document.getElementById('lists');
