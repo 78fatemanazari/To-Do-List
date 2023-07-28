@@ -7,7 +7,8 @@ function clearCompletedTasks(tasksLocal) {
   tasksLocal = tasksLocal.filter((task) => !task.completed);
 
   // Reassign correct indexes after deletion
-  tasksLocal.forEach((task, index) => {
+  tasksLocal.forEach((_task, index) => {
+    _task.index = index + 1;
   });
 
   localStorage.setItem('tasks', JSON.stringify(tasksLocal));
