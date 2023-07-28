@@ -25,6 +25,13 @@ function deleteTaskElement(tasksLocal, taskIndex) {
 }
 
 function updateTaskText(value, index, tasksLocal) {
+  // Check if the task index is valid
+  if (index < 1 || index > tasksLocal.length) {
+    console.error('Invalid task index.');
+    return;
+  }
+
+  // Update the task text if the task exists
   tasksLocal[index - 1].name = value;
   localStorage.setItem('tasks', JSON.stringify(tasksLocal));
 }
