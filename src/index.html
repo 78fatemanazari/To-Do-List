@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List Application</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List Application</title>
+  <base href="/">
+  <link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 <body>
-    <div class="lists-container">
-        <h1>Today's To Do</h1>
-        <div class="input-btn">
-            <input type="text" placeholder="Add to your list...">
-            <button class="add-lists" type="button"><span>&#9166;</span></button>
-        </div>
-        <ul id="lists"></ul>
-        <button class="remove-lists" type="button">
-            Clear all completed
-        </button>
+  <div class="todo-list-container">
+    <h1 class="heading">Today's To Do...</h1>
+    <div class="task-container">
+      <input type="text" id="task-input" placeholder="Add to your list...">
+      <button id="add-btn" type="button"><span>&#8629;</span></button>
     </div>
-    <script src="./index.js"></script>
+    <ul id="lists"></ul>
+    <button id="remove-btn" type="button">Clear all completed</button>
+  </div>
+  <script type="module" src="main.js"></script>
+  <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 </body>
 </html>
