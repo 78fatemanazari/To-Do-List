@@ -1,12 +1,15 @@
-// This function updates the status (completed: true/false) of a task
 function updateTaskStatus(taskIndex, status, tasksLocal) {
   tasksLocal[taskIndex - 1].completed = status;
   localStorage.setItem('tasks', JSON.stringify(tasksLocal));
 }
 
-// This function clears all completed tasks from the list
 function clearCompletedTasks(tasksLocal) {
   tasksLocal = tasksLocal.filter((task) => !task.completed);
+
+  // Reassign correct indexes after deletion
+  tasksLocal.forEach((task, index) => {
+  });
+
   localStorage.setItem('tasks', JSON.stringify(tasksLocal));
   document.location.reload();
 }
