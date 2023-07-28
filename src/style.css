@@ -5,82 +5,134 @@
 }
 
 body {
-  font-family: monospace;
+  font-family: monospace, cursive;
+  background: rgb(207, 245, 230);
 }
 
-.lists-container {
-  width: 40%;
-  height: 20%;
-  margin-left: 30%;
+.todo-list-container {
+  margin-left: 35%;
   margin-top: 10%;
-  padding: 50px;
-  border: 1px solid white;
+  padding: 20px;
+  width: 30%;
+  background: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 
-.input-btn {
+.heading {
+  margin: 20px 0 20px 20px;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+  margin-left: 15px;
+  width: 100%;
+}
+
+p {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.task-container {
+  width: 95%;
+  margin: 0 20px 10px 20px;
   display: flex;
   justify-content: space-between;
 }
 
 input {
+  border: none;
   padding: 5px;
-  border: none;
-  width: 100%;
+  width: 95%;
+  font-size: 12px;
 }
 
-.add-lists {
-  border: none;
+#task-input:focus {
+  outline-color: rgb(207, 245, 230);
+  background-color: rgb(227, 237, 255);
+}
+
+input::placeholder {
+  color: rgb(158, 150, 150);
+}
+
+#add-btn {
+  padding: 3px;
   background-color: #fff;
+  border: none;
   cursor: pointer;
+  font-size: 20px;
 }
 
-#lists {
-  margin-left: 50px;
-}
-
-.tasks {
-  width: 90%;
+.task-list {
+  width: 95%;
+  margin-left: 7px;
   background-color: #fff;
-  border-bottom: 1px solid #9c9c9c;
+  border-bottom: 1px solid #929292;
   display: flex;
-  align-items: center;
-  padding: 10px;
+  padding: 5px;
 }
 
 .checked {
   margin-right: 10px;
   width: 16px;
-  font-size: 18px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.task-index {
+  color: #000;
+  display: flex;
 }
 
 .task-name {
   width: 290px;
   margin-right: 44px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: rgb(65, 60, 60);
+  font-size: 16px;
+}
+
+.task-name:focus {
+  background-color: rgb(207, 245, 230);
 }
 
 .three-dot {
   margin-right: 15px;
   cursor: pointer;
-  margin-top: 7px;
+  font-size: 18px;
 }
 
 .trash-icon {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px;
 }
 
-.remove-lists {
-  position: relative;
-  top: 30px;
+.hide-icon {
+  display: none;
+}
+
+.completed-task {
+  text-decoration: line-through;
+}
+
+#remove-btn {
   border: none;
-  background: #fff;
   padding: 10px;
-  font-size: 16px;
-  font-style: italic;
+  background: none;
+  font-family: monospace, cursive;
+  font-size: 20px;
   font-weight: 400;
+  margin-left: 70px;
+  margin-top: 20px;
   cursor: pointer;
+  font-style: italic;
+}
+
+#remove-btn:hover {
+  background: rgb(207, 245, 230);
 }
