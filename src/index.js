@@ -4,7 +4,6 @@ import {
 } from './taskFunction.js';
 import { updateTaskStatus, clearCompletedTasks } from './statusUpdate.js';
 
-
 let tasksLocal = [];
 
 window.loadTasksToLocalStorage = () => {
@@ -50,18 +49,6 @@ const displayTaskElement = (task) => {
   return taskItem;
 };
 
-document.getElementById('add-btn').addEventListener('click', () => {
-  const taskInput = document.getElementById('task-input');
-  const taskName = taskInput.value.trim();
-  if (taskName !== '') {
-    createTaskElement(taskName, tasksLocal);
-    tasksLocal = JSON.parse(localStorage.getItem('tasks'));
-    document.getElementById('lists').innerHTML = ''; // Clear the existing task list
-    displayTasks(); // Redisplay the updated task list
-    taskInput.value = '';
-  }
-});
-
 function activateDeleteListener(delBtn) {
   delBtn.addEventListener('click', () => {
     const parent = delBtn.parentNode;
@@ -106,7 +93,6 @@ function activateCheckboxListeners() {
   });
 }
 
-
 function activateTaskInputListeners() {
   const taskInput = document.querySelectorAll('.task-name');
   taskInput.forEach((ti) => {
@@ -117,10 +103,6 @@ function activateTaskInputListeners() {
     });
   });
 }
-
-document.getElementById('remove-btn').addEventListener('click', () => {
-  clearCompletedTasks(tasksLocal);
-});
 
 const displayTasks = () => {
   const taskList = document.getElementById('lists');
@@ -134,6 +116,22 @@ const displayTasks = () => {
     activateTaskInputListeners();
   }
 };
+
+document.getElementById('add-btn').addEventListener('click', () => {
+  const taskInput = document.getElementById('task-input');
+  const taskName = taskInput.value.trim();
+  if (taskName !== '') {
+    createTaskElement(taskName, tasksLocal);
+    tasksLocal = JSON.parse(localStorage.getItem('tasks'));
+    document.getElementById('lists').innerHTML = ''; // Clear the existing task list
+    displayTasks(); // Redisplay the updated task list
+    taskInput.value = '';
+  }
+});
+
+document.getElementById('remove-btn').addEventListener('click', () => {
+  clearCompletedTasks(tasksLocal);
+});
 
 const loadTasksFromLocalStorage = () => {
   tasksLocal = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
