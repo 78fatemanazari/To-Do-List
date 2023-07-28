@@ -2,6 +2,8 @@ import './style.css';
 import {
   createTaskElement, deleteTaskElement, updateTaskText, arrangeIndexes,
 } from './taskFunction.js';
+import { updateTaskStatus, clearCompletedTasks } from './statusUpdate.js';
+
 
 let tasksLocal = [];
 
@@ -53,7 +55,9 @@ document.getElementById('add-btn').addEventListener('click', () => {
   const taskName = taskInput.value.trim();
   if (taskName !== '') {
     createTaskElement(taskName, tasksLocal);
-    document.location.reload();
+    tasksLocal = JSON.parse(localStorage.getItem('tasks'));
+    document.getElementById('lists').innerHTML = ''; // Clear the existing task list
+    displayTasks(); // Redisplay the updated task list
     taskInput.value = '';
   }
 });
@@ -87,9 +91,11 @@ function activateMoreListeners() {
 function activateCheckboxListeners() {
   const checkboxInput = document.querySelectorAll('.checked');
   checkboxInput.forEach((cbi) => {
-    cbi.addEventListener('click', (e) => {
+    cbi.addEventListener('change', (e) => {
       const clickedCheck = e.target;
       const parent = clickedCheck.parentNode;
+      const taskIndex = parent.getElementsByClassName('task-index')[0].value;
+      updateTaskStatus(taskIndex, clickedCheck.checked, tasksLocal);
       const taskInput = parent.getElementsByClassName('task-name')[0];
       if (clickedCheck.checked) {
         taskInput.classList.add('completed-task');
@@ -100,16 +106,21 @@ function activateCheckboxListeners() {
   });
 }
 
+
 function activateTaskInputListeners() {
   const taskInput = document.querySelectorAll('.task-name');
   taskInput.forEach((ti) => {
     const parent = ti.parentNode;
-    const taskIndex = parent.getElementsByClassName('task-index')[0].value;
+    const taskIndex = Number(parent.getElementsByClassName('task-index')[0].value);
     ti.addEventListener('change', () => {
       updateTaskText(ti.value, taskIndex, tasksLocal);
     });
   });
 }
+
+document.getElementById('remove-btn').addEventListener('click', () => {
+  clearCompletedTasks(tasksLocal);
+});
 
 const displayTasks = () => {
   const taskList = document.getElementById('lists');
