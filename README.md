@@ -129,7 +129,7 @@ To run tests, run the following command:
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 **Juan Carlos Muñoz**
+👤 **Fatema Nazari**
 
 - GitHub: [@78fatemanazari](https://github.com/78fatemanazari)
 - Twitter: [@fati_nazari78](https://twitter.com/fati_nazari78?s=31)
